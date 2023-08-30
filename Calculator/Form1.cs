@@ -12,101 +12,106 @@ namespace Calculator
 
         private void number1_Click(object sender, EventArgs e)
         {
-            input += "1";
-            updateInput();
+            updateInput("1");
         }
 
-        private void updateInput()
-        {
-            tbInput.Text = input;
-        }
-
+       
         private void number2_Click(object sender, EventArgs e)
         {
-            input += "2";
-            updateInput();
+            updateInput("2");
         }
 
         private void number3_Click(object sender, EventArgs e)
         {
-            input += "3";
-            updateInput();
+            updateInput("3");
         }
 
         private void number4_Click(object sender, EventArgs e)
         {
-            input += "4";
-            updateInput();
+            updateInput("4");
         }
 
         private void number5_Click(object sender, EventArgs e)
         {
-            input += "5";
-            updateInput();
+            updateInput("5");
         }
 
         private void number6_Click(object sender, EventArgs e)
         {
-            input += "6";
-            updateInput();
+            updateInput("6");
         }
 
         private void number7_Click(object sender, EventArgs e)
         {
-            input += "7";
-            updateInput();
+            updateInput("7");
         }
 
         private void number8_Click(object sender, EventArgs e)
         {
-            input += "8";
-            updateInput();
+            updateInput("8");
         }
 
         private void number9_Click(object sender, EventArgs e)
         {
-            input += "9";
-            updateInput();
+            updateInput("9");
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
-            input += "0";
-            updateInput();
+            updateInput("0");
         }
 
         private void buttonMult_Click(object sender, EventArgs e)
         {
-            input += "*";
-            updateInput();
+            updateInput("*");
         }
 
         private void buttonSub_Click(object sender, EventArgs e)
         {
-            input += "-";
-            updateInput();
+            updateInput("-");
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            input += "+";
-            updateInput();
+            updateInput("+");
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
+            string output = "NONE";
             try
             {
                 double result = Convert.ToDouble(new DataTable().Compute(input, null));
-                input = result.ToString();
+                output = result.ToString();
             } catch (System.Data.SyntaxErrorException)
             {
-                input = "ERROR";
+                output = "ERROR";
             }
             finally
             {
-                updateInput();
+                updateOutput(output);
             }
         }
+
+        private void updateInput(String text)
+        {
+            input += text;
+
+            tbInput.Text = input;
+        }
+
+        private void updateOutput(String text)
+        {
+            tbInput.Text = text;
+            if (text != "ERROR")
+            {
+                input = text;
+            } else
+            {
+                input = "";
+            }
+            
+        }
+
     }
 }
