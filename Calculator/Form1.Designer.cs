@@ -53,6 +53,7 @@
             number7.TabIndex = 0;
             number7.Text = "7";
             number7.UseVisualStyleBackColor = true;
+            number7.Click += number7_Click;
             // 
             // number8
             // 
@@ -62,6 +63,7 @@
             number8.TabIndex = 1;
             number8.Text = "8";
             number8.UseVisualStyleBackColor = true;
+            number8.Click += number8_Click;
             // 
             // number9
             // 
@@ -71,6 +73,7 @@
             number9.TabIndex = 2;
             number9.Text = "9";
             number9.UseVisualStyleBackColor = true;
+            number9.Click += number9_Click;
             // 
             // number6
             // 
@@ -80,6 +83,7 @@
             number6.TabIndex = 5;
             number6.Text = "6";
             number6.UseVisualStyleBackColor = true;
+            number6.Click += number6_Click;
             // 
             // number5
             // 
@@ -89,6 +93,7 @@
             number5.TabIndex = 4;
             number5.Text = "5";
             number5.UseVisualStyleBackColor = true;
+            number5.Click += number5_Click;
             // 
             // number4
             // 
@@ -98,6 +103,7 @@
             number4.TabIndex = 3;
             number4.Text = "4";
             number4.UseVisualStyleBackColor = true;
+            number4.Click += number4_Click;
             // 
             // number3
             // 
@@ -107,6 +113,7 @@
             number3.TabIndex = 8;
             number3.Text = "3";
             number3.UseVisualStyleBackColor = true;
+            number3.Click += number3_Click;
             // 
             // number2
             // 
@@ -116,6 +123,7 @@
             number2.TabIndex = 7;
             number2.Text = "2";
             number2.UseVisualStyleBackColor = true;
+            number2.Click += number2_Click;
             // 
             // number1
             // 
@@ -135,6 +143,7 @@
             button0.TabIndex = 9;
             button0.Text = "0";
             button0.UseVisualStyleBackColor = true;
+            button0.Click += button0_Click;
             // 
             // tbInput
             // 
@@ -153,6 +162,7 @@
             buttonMult.TabIndex = 11;
             buttonMult.Text = "*";
             buttonMult.UseVisualStyleBackColor = true;
+            buttonMult.Click += buttonMult_Click;
             // 
             // buttonSub
             // 
@@ -162,6 +172,7 @@
             buttonSub.TabIndex = 12;
             buttonSub.Text = "-";
             buttonSub.UseVisualStyleBackColor = true;
+            buttonSub.Click += buttonSub_Click;
             // 
             // buttonAdd
             // 
@@ -171,6 +182,7 @@
             buttonAdd.TabIndex = 13;
             buttonAdd.Text = "+";
             buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // buttonEquals
             // 
@@ -180,6 +192,7 @@
             buttonEquals.TabIndex = 14;
             buttonEquals.Text = "=";
             buttonEquals.UseVisualStyleBackColor = true;
+            buttonEquals.Click += buttonEquals_Click;
             // 
             // Form1
             // 
