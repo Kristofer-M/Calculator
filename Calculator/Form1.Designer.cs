@@ -50,6 +50,7 @@
             buttonPower = new Button();
             buttonOpenBracket = new Button();
             buttonCloseBracket = new Button();
+            buttonSqrt = new Button();
             SuspendLayout();
             // 
             // number7
@@ -278,11 +279,23 @@
             buttonCloseBracket.UseVisualStyleBackColor = true;
             buttonCloseBracket.Click += buttonCloseBracket_Click;
             // 
+            // buttonSqrt
+            // 
+            buttonSqrt.ForeColor = Color.Black;
+            buttonSqrt.Location = new Point(292, 163);
+            buttonSqrt.Name = "buttonSqrt";
+            buttonSqrt.Size = new Size(52, 45);
+            buttonSqrt.TabIndex = 22;
+            buttonSqrt.Text = "√";
+            buttonSqrt.UseVisualStyleBackColor = true;
+            buttonSqrt.Click += buttonSqrt_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(407, 486);
+            Controls.Add(buttonSqrt);
             Controls.Add(buttonCloseBracket);
             Controls.Add(buttonOpenBracket);
             Controls.Add(buttonPower);
@@ -335,5 +348,6 @@
         private Button buttonPower;
         private Button buttonOpenBracket;
         private Button buttonCloseBracket;
+        private Button buttonSqrt;
     }
 }

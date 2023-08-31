@@ -1,4 +1,4 @@
-using System.Data;
+ï»¿using System.Data;
 using org.matheval;
 
 namespace Calculator
@@ -11,8 +11,9 @@ namespace Calculator
         public Form1()
         {
             InitializeComponent();
-            operators.Add("×", "*");
-            operators.Add("÷", "/");
+            operators.Add("Ã—", "*");
+            operators.Add("Ã·", "/");
+            operators.Add("âˆš(", "sqrt(");
         }
 
 
@@ -132,7 +133,7 @@ namespace Calculator
 
         private void buttonMult_Click(object sender, EventArgs e)
         {
-            updateInput("×");
+            updateInput("Ã—");
         }
 
         private void buttonSub_Click(object sender, EventArgs e)
@@ -147,7 +148,7 @@ namespace Calculator
 
         private void buttonDIv_Click(object sender, EventArgs e)
         {
-            updateInput("÷");
+            updateInput("Ã·");
         }
 
         private void buttonDot_Click(object sender, EventArgs e)
@@ -168,6 +169,11 @@ namespace Calculator
         private void buttonCloseBracket_Click(object sender, EventArgs e)
         {
             updateInput(")");
+        }
+
+        private void buttonSqrt_Click(object sender, EventArgs e)
+        {
+            updateInput("âˆš(");
         }
     }
 }
