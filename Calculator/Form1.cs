@@ -8,7 +8,7 @@ namespace Calculator
         public String input;
         public String expression;
         public Dictionary<String, String> operators = new Dictionary<string, string>();
-        public String memory;
+        public String memory = null;
         public Form1()
         {
             InitializeComponent();
@@ -60,10 +60,12 @@ namespace Calculator
             if (text != "ERROR")
             {
                 input = text;
+                expression = text;
             }
             else
             {
                 input = "";
+                expression = "";
             }
 
         }
@@ -105,7 +107,7 @@ namespace Calculator
             }
             else
             {
-                if (!string.IsNullOrEmpty(memory))
+                if (string.IsNullOrEmpty(memory))
                 {
                     memory = expression;
                 }
@@ -120,7 +122,7 @@ namespace Calculator
 
         private void buttonMemoryClear_Click(object sender, EventArgs e)
         {
-            memory = "";
+            memory = null;
         }
 
         // NUMBERS AND OPERATIONS
