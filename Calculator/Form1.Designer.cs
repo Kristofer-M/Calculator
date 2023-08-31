@@ -48,6 +48,8 @@
             buttonClear = new Button();
             buttonDot = new Button();
             buttonPower = new Button();
+            buttonOpenBracket = new Button();
+            buttonCloseBracket = new Button();
             SuspendLayout();
             // 
             // number7
@@ -256,11 +258,33 @@
             buttonPower.UseVisualStyleBackColor = true;
             buttonPower.Click += buttonPower_Click;
             // 
+            // buttonOpenBracket
+            // 
+            buttonOpenBracket.Location = new Point(234, 367);
+            buttonOpenBracket.Name = "buttonOpenBracket";
+            buttonOpenBracket.Size = new Size(52, 45);
+            buttonOpenBracket.TabIndex = 20;
+            buttonOpenBracket.Text = "(";
+            buttonOpenBracket.UseVisualStyleBackColor = true;
+            buttonOpenBracket.Click += buttonOpenBracket_Click;
+            // 
+            // buttonCloseBracket
+            // 
+            buttonCloseBracket.Location = new Point(292, 367);
+            buttonCloseBracket.Name = "buttonCloseBracket";
+            buttonCloseBracket.Size = new Size(52, 45);
+            buttonCloseBracket.TabIndex = 21;
+            buttonCloseBracket.Text = ")";
+            buttonCloseBracket.UseVisualStyleBackColor = true;
+            buttonCloseBracket.Click += buttonCloseBracket_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(407, 486);
+            Controls.Add(buttonCloseBracket);
+            Controls.Add(buttonOpenBracket);
             Controls.Add(buttonPower);
             Controls.Add(buttonDot);
             Controls.Add(buttonClear);
@@ -282,7 +306,7 @@
             Controls.Add(number8);
             Controls.Add(number7);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Calculator";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -309,5 +333,7 @@
         private Button buttonClear;
         private Button buttonDot;
         private Button buttonPower;
+        private Button buttonOpenBracket;
+        private Button buttonCloseBracket;
     }
 }

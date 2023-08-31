@@ -15,6 +15,70 @@ namespace Calculator
             operators.Add("÷", "/");
         }
 
+
+        private void buttonEquals_Click(object sender, EventArgs e)
+        {
+            string output = "NONE";
+
+            try
+            {
+                //double result = Convert.ToDouble(new DataTable().Compute(expression, null));
+                var mathExpression = new Expression(expression);
+                output = mathExpression.Eval().ToString();
+            }
+            catch (System.Data.SyntaxErrorException)
+            {
+                output = "ERROR";
+            }
+            finally
+            {
+                updateOutput(output);
+            }
+        }
+
+        private void updateInput(String text)
+        {
+            if (operators.ContainsKey(text))
+            {
+                expression += operators[text];
+            }
+            else
+            {
+                expression += text;
+            }
+            input += text;
+
+            tbInput.Text = input;
+        }
+
+        private void updateOutput(String text)
+        {
+            tbInput.Text = text;
+            if (text != "ERROR")
+            {
+                input = text;
+            }
+            else
+            {
+                input = "";
+            }
+
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            expression = expression.Remove(expression.Length - 1);
+            input = input.Remove(input.Length - 1);
+            tbInput.Text = input;
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            expression = "";
+            input = "";
+            tbInput.Text = input;
+        }
+
         private void number1_Click(object sender, EventArgs e)
         {
             updateInput("1");
@@ -86,69 +150,6 @@ namespace Calculator
             updateInput("÷");
         }
 
-        private void buttonEquals_Click(object sender, EventArgs e)
-        {
-            string output = "NONE";
-
-            try
-            {
-                //double result = Convert.ToDouble(new DataTable().Compute(expression, null));
-                var mathExpression = new Expression(expression);
-                output = mathExpression.Eval().ToString();
-            }
-            catch (System.Data.SyntaxErrorException)
-            {
-                output = "ERROR";
-            }
-            finally
-            {
-                updateOutput(output);
-            }
-        }
-
-        private void updateInput(String text)
-        {
-            if (operators.ContainsKey(text))
-            {
-                expression += operators[text];
-            }
-            else
-            {
-                expression += text;
-            }
-            input += text;
-
-            tbInput.Text = input;
-        }
-
-        private void updateOutput(String text)
-        {
-            tbInput.Text = text;
-            if (text != "ERROR")
-            {
-                input = text;
-            }
-            else
-            {
-                input = "";
-            }
-
-        }
-
-        private void buttonDel_Click(object sender, EventArgs e)
-        {
-            expression = expression.Remove(expression.Length - 1);
-            input = input.Remove(input.Length - 1);
-            tbInput.Text = input;
-        }
-
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-            expression = "";
-            input = "";
-            tbInput.Text = input;
-        }
-
         private void buttonDot_Click(object sender, EventArgs e)
         {
             updateInput(".");
@@ -157,6 +158,16 @@ namespace Calculator
         private void buttonPower_Click(object sender, EventArgs e)
         {
             updateInput("^");
+        }
+
+        private void buttonOpenBracket_Click(object sender, EventArgs e)
+        {
+            updateInput("(");
+        }
+
+        private void buttonCloseBracket_Click(object sender, EventArgs e)
+        {
+            updateInput(")");
         }
     }
 }
