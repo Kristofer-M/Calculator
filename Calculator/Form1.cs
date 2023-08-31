@@ -8,6 +8,7 @@ namespace Calculator
         public String input;
         public String expression;
         public Dictionary<String, String> operators = new Dictionary<string, string>();
+        public String memory;
         public Form1()
         {
             InitializeComponent();
@@ -16,7 +17,7 @@ namespace Calculator
             operators.Add("√(", "sqrt(");
         }
 
-
+        // MATH EVALUATION
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             string output = "NONE";
@@ -37,6 +38,7 @@ namespace Calculator
             }
         }
 
+        // I/O
         private void updateInput(String text)
         {
             if (operators.ContainsKey(text))
@@ -66,6 +68,7 @@ namespace Calculator
 
         }
 
+        // DELETION
         private void buttonDel_Click(object sender, EventArgs e)
         {
             expression = expression.Remove(expression.Length - 1);
@@ -80,6 +83,47 @@ namespace Calculator
             tbInput.Text = input;
         }
 
+
+        // MEMORY
+        private void buttonMemoryPlus_Click(object sender, EventArgs e)
+        {
+            memoryOperation("+");
+        }
+
+        private void buttonMemoryMinus_Click(object sender, EventArgs e)
+        {
+            memoryOperation("-");
+        }
+
+        private void memoryOperation(string op)
+        {
+            if (!int.TryParse(expression, out _))
+            {
+                tbInput.Text = "ERROR";
+                input = "";
+                expression = "";
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(memory))
+                {
+                    memory = expression;
+                }
+                else
+                {
+                    var mathExpression = new Expression(expression + op + memory);
+                    string output = mathExpression.Eval().ToString();
+                    updateOutput(output);
+                }
+            }
+        }
+
+        private void buttonMemoryClear_Click(object sender, EventArgs e)
+        {
+            memory = "";
+        }
+
+        // NUMBERS AND OPERATIONS
         private void number1_Click(object sender, EventArgs e)
         {
             updateInput("1");
@@ -175,5 +219,7 @@ namespace Calculator
         {
             updateInput("√(");
         }
+
+        
     }
 }

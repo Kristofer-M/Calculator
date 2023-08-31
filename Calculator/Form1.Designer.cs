@@ -51,11 +51,14 @@
             buttonOpenBracket = new Button();
             buttonCloseBracket = new Button();
             buttonSqrt = new Button();
+            buttonMemoryPlus = new Button();
+            buttonMemoryMinus = new Button();
+            buttonMemoryClear = new Button();
             SuspendLayout();
             // 
             // number7
             // 
-            number7.Location = new Point(60, 214);
+            number7.Location = new Point(39, 187);
             number7.Name = "number7";
             number7.Size = new Size(52, 45);
             number7.TabIndex = 0;
@@ -65,7 +68,7 @@
             // 
             // number8
             // 
-            number8.Location = new Point(118, 214);
+            number8.Location = new Point(97, 187);
             number8.Name = "number8";
             number8.Size = new Size(52, 45);
             number8.TabIndex = 1;
@@ -75,7 +78,7 @@
             // 
             // number9
             // 
-            number9.Location = new Point(176, 214);
+            number9.Location = new Point(155, 187);
             number9.Name = "number9";
             number9.Size = new Size(52, 45);
             number9.TabIndex = 2;
@@ -85,7 +88,7 @@
             // 
             // number6
             // 
-            number6.Location = new Point(176, 265);
+            number6.Location = new Point(155, 238);
             number6.Name = "number6";
             number6.Size = new Size(52, 45);
             number6.TabIndex = 5;
@@ -95,7 +98,7 @@
             // 
             // number5
             // 
-            number5.Location = new Point(118, 265);
+            number5.Location = new Point(97, 238);
             number5.Name = "number5";
             number5.Size = new Size(52, 45);
             number5.TabIndex = 4;
@@ -105,7 +108,7 @@
             // 
             // number4
             // 
-            number4.Location = new Point(60, 265);
+            number4.Location = new Point(39, 238);
             number4.Name = "number4";
             number4.Size = new Size(52, 45);
             number4.TabIndex = 3;
@@ -115,7 +118,7 @@
             // 
             // number3
             // 
-            number3.Location = new Point(176, 316);
+            number3.Location = new Point(155, 289);
             number3.Name = "number3";
             number3.Size = new Size(52, 45);
             number3.TabIndex = 8;
@@ -125,7 +128,7 @@
             // 
             // number2
             // 
-            number2.Location = new Point(118, 316);
+            number2.Location = new Point(97, 289);
             number2.Name = "number2";
             number2.Size = new Size(52, 45);
             number2.TabIndex = 7;
@@ -135,7 +138,7 @@
             // 
             // number1
             // 
-            number1.Location = new Point(60, 316);
+            number1.Location = new Point(39, 289);
             number1.Name = "number1";
             number1.Size = new Size(52, 45);
             number1.TabIndex = 6;
@@ -145,7 +148,7 @@
             // 
             // button0
             // 
-            button0.Location = new Point(60, 367);
+            button0.Location = new Point(39, 340);
             button0.Name = "button0";
             button0.Size = new Size(52, 45);
             button0.TabIndex = 9;
@@ -159,13 +162,13 @@
             tbInput.Location = new Point(40, 44);
             tbInput.Multiline = true;
             tbInput.Name = "tbInput";
-            tbInput.Size = new Size(326, 66);
+            tbInput.Size = new Size(283, 66);
             tbInput.TabIndex = 10;
             // 
             // buttonMult
             // 
             buttonMult.ForeColor = Color.Black;
-            buttonMult.Location = new Point(234, 214);
+            buttonMult.Location = new Point(213, 187);
             buttonMult.Name = "buttonMult";
             buttonMult.Size = new Size(52, 45);
             buttonMult.TabIndex = 11;
@@ -175,7 +178,7 @@
             // 
             // buttonSub
             // 
-            buttonSub.Location = new Point(234, 265);
+            buttonSub.Location = new Point(213, 238);
             buttonSub.Name = "buttonSub";
             buttonSub.Size = new Size(52, 45);
             buttonSub.TabIndex = 12;
@@ -185,7 +188,7 @@
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(234, 316);
+            buttonAdd.Location = new Point(213, 289);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(52, 45);
             buttonAdd.TabIndex = 13;
@@ -195,7 +198,7 @@
             // 
             // buttonEquals
             // 
-            buttonEquals.Location = new Point(176, 367);
+            buttonEquals.Location = new Point(155, 340);
             buttonEquals.Name = "buttonEquals";
             buttonEquals.Size = new Size(52, 45);
             buttonEquals.TabIndex = 14;
@@ -206,7 +209,7 @@
             // buttonDIv
             // 
             buttonDIv.ForeColor = Color.Black;
-            buttonDIv.Location = new Point(234, 163);
+            buttonDIv.Location = new Point(213, 136);
             buttonDIv.Name = "buttonDIv";
             buttonDIv.Size = new Size(52, 45);
             buttonDIv.TabIndex = 15;
@@ -217,7 +220,7 @@
             // buttonDel
             // 
             buttonDel.ForeColor = Color.Black;
-            buttonDel.Location = new Point(118, 163);
+            buttonDel.Location = new Point(97, 136);
             buttonDel.Name = "buttonDel";
             buttonDel.Size = new Size(52, 45);
             buttonDel.TabIndex = 16;
@@ -228,7 +231,7 @@
             // buttonClear
             // 
             buttonClear.ForeColor = Color.Black;
-            buttonClear.Location = new Point(60, 163);
+            buttonClear.Location = new Point(39, 136);
             buttonClear.Name = "buttonClear";
             buttonClear.Size = new Size(52, 45);
             buttonClear.TabIndex = 17;
@@ -239,7 +242,7 @@
             // buttonDot
             // 
             buttonDot.ForeColor = Color.Black;
-            buttonDot.Location = new Point(118, 367);
+            buttonDot.Location = new Point(97, 340);
             buttonDot.Name = "buttonDot";
             buttonDot.RightToLeft = RightToLeft.No;
             buttonDot.Size = new Size(52, 45);
@@ -251,7 +254,7 @@
             // buttonPower
             // 
             buttonPower.ForeColor = Color.Black;
-            buttonPower.Location = new Point(176, 163);
+            buttonPower.Location = new Point(155, 136);
             buttonPower.Name = "buttonPower";
             buttonPower.Size = new Size(52, 45);
             buttonPower.TabIndex = 19;
@@ -261,7 +264,7 @@
             // 
             // buttonOpenBracket
             // 
-            buttonOpenBracket.Location = new Point(234, 367);
+            buttonOpenBracket.Location = new Point(213, 340);
             buttonOpenBracket.Name = "buttonOpenBracket";
             buttonOpenBracket.Size = new Size(52, 45);
             buttonOpenBracket.TabIndex = 20;
@@ -271,7 +274,7 @@
             // 
             // buttonCloseBracket
             // 
-            buttonCloseBracket.Location = new Point(292, 367);
+            buttonCloseBracket.Location = new Point(271, 340);
             buttonCloseBracket.Name = "buttonCloseBracket";
             buttonCloseBracket.Size = new Size(52, 45);
             buttonCloseBracket.TabIndex = 21;
@@ -282,7 +285,7 @@
             // buttonSqrt
             // 
             buttonSqrt.ForeColor = Color.Black;
-            buttonSqrt.Location = new Point(292, 163);
+            buttonSqrt.Location = new Point(271, 136);
             buttonSqrt.Name = "buttonSqrt";
             buttonSqrt.Size = new Size(52, 45);
             buttonSqrt.TabIndex = 22;
@@ -290,11 +293,47 @@
             buttonSqrt.UseVisualStyleBackColor = true;
             buttonSqrt.Click += buttonSqrt_Click;
             // 
+            // buttonMemoryPlus
+            // 
+            buttonMemoryPlus.ForeColor = Color.Black;
+            buttonMemoryPlus.Location = new Point(271, 289);
+            buttonMemoryPlus.Name = "buttonMemoryPlus";
+            buttonMemoryPlus.Size = new Size(52, 45);
+            buttonMemoryPlus.TabIndex = 23;
+            buttonMemoryPlus.Text = "M+";
+            buttonMemoryPlus.UseVisualStyleBackColor = true;
+            buttonMemoryPlus.Click += buttonMemoryPlus_Click;
+            // 
+            // buttonMemoryMinus
+            // 
+            buttonMemoryMinus.ForeColor = Color.Black;
+            buttonMemoryMinus.Location = new Point(271, 238);
+            buttonMemoryMinus.Name = "buttonMemoryMinus";
+            buttonMemoryMinus.Size = new Size(52, 45);
+            buttonMemoryMinus.TabIndex = 24;
+            buttonMemoryMinus.Text = "M-";
+            buttonMemoryMinus.UseVisualStyleBackColor = true;
+            buttonMemoryMinus.Click += buttonMemoryMinus_Click;
+            // 
+            // buttonMemoryClear
+            // 
+            buttonMemoryClear.ForeColor = Color.Black;
+            buttonMemoryClear.Location = new Point(271, 187);
+            buttonMemoryClear.Name = "buttonMemoryClear";
+            buttonMemoryClear.Size = new Size(52, 45);
+            buttonMemoryClear.TabIndex = 25;
+            buttonMemoryClear.Text = "MC";
+            buttonMemoryClear.UseVisualStyleBackColor = true;
+            buttonMemoryClear.Click += buttonMemoryClear_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(407, 486);
+            ClientSize = new Size(358, 410);
+            Controls.Add(buttonMemoryClear);
+            Controls.Add(buttonMemoryMinus);
+            Controls.Add(buttonMemoryPlus);
             Controls.Add(buttonSqrt);
             Controls.Add(buttonCloseBracket);
             Controls.Add(buttonOpenBracket);
@@ -349,5 +388,8 @@
         private Button buttonOpenBracket;
         private Button buttonCloseBracket;
         private Button buttonSqrt;
+        private Button buttonMemoryPlus;
+        private Button buttonMemoryMinus;
+        private Button buttonMemoryClear;
     }
 }
