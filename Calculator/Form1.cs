@@ -1,13 +1,18 @@
 using System.Data;
+using org.matheval;
 
 namespace Calculator
 {
     public partial class Form1 : Form
     {
         public String input;
+        public String expression;
+        public Dictionary<String, String> operators = new Dictionary<string, string>();
         public Form1()
         {
             InitializeComponent();
+            operators.Add("×", "*");
+            operators.Add("÷", "/");
         }
 
         private void number1_Click(object sender, EventArgs e)
@@ -15,7 +20,7 @@ namespace Calculator
             updateInput("1");
         }
 
-       
+
         private void number2_Click(object sender, EventArgs e)
         {
             updateInput("2");
@@ -63,7 +68,7 @@ namespace Calculator
 
         private void buttonMult_Click(object sender, EventArgs e)
         {
-            updateInput("*");
+            updateInput("×");
         }
 
         private void buttonSub_Click(object sender, EventArgs e)
@@ -76,14 +81,22 @@ namespace Calculator
             updateInput("+");
         }
 
+        private void buttonDIv_Click(object sender, EventArgs e)
+        {
+            updateInput("÷");
+        }
+
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             string output = "NONE";
+
             try
             {
-                double result = Convert.ToDouble(new DataTable().Compute(input, null));
-                output = result.ToString();
-            } catch (System.Data.SyntaxErrorException)
+                //double result = Convert.ToDouble(new DataTable().Compute(expression, null));
+                var mathExpression = new Expression(expression);
+                output = mathExpression.Eval().ToString();
+            }
+            catch (System.Data.SyntaxErrorException)
             {
                 output = "ERROR";
             }
@@ -95,6 +108,14 @@ namespace Calculator
 
         private void updateInput(String text)
         {
+            if (operators.ContainsKey(text))
+            {
+                expression += operators[text];
+            }
+            else
+            {
+                expression += text;
+            }
             input += text;
 
             tbInput.Text = input;
@@ -106,12 +127,36 @@ namespace Calculator
             if (text != "ERROR")
             {
                 input = text;
-            } else
+            }
+            else
             {
                 input = "";
             }
-            
+
         }
 
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            expression = expression.Remove(expression.Length - 1);
+            input = input.Remove(input.Length - 1);
+            tbInput.Text = input;
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            expression = "";
+            input = "";
+            tbInput.Text = input;
+        }
+
+        private void buttonDot_Click(object sender, EventArgs e)
+        {
+            updateInput(".");
+        }
+
+        private void buttonPower_Click(object sender, EventArgs e)
+        {
+            updateInput("^");
+        }
     }
 }

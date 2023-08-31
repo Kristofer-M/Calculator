@@ -43,6 +43,11 @@
             buttonSub = new Button();
             buttonAdd = new Button();
             buttonEquals = new Button();
+            buttonDIv = new Button();
+            buttonDel = new Button();
+            buttonClear = new Button();
+            buttonDot = new Button();
+            buttonPower = new Button();
             SuspendLayout();
             // 
             // number7
@@ -137,7 +142,7 @@
             // 
             // button0
             // 
-            button0.Location = new Point(118, 367);
+            button0.Location = new Point(60, 367);
             button0.Name = "button0";
             button0.Size = new Size(52, 45);
             button0.TabIndex = 9;
@@ -156,11 +161,12 @@
             // 
             // buttonMult
             // 
+            buttonMult.ForeColor = Color.Black;
             buttonMult.Location = new Point(234, 214);
             buttonMult.Name = "buttonMult";
             buttonMult.Size = new Size(52, 45);
             buttonMult.TabIndex = 11;
-            buttonMult.Text = "*";
+            buttonMult.Text = "×";
             buttonMult.UseVisualStyleBackColor = true;
             buttonMult.Click += buttonMult_Click;
             // 
@@ -186,7 +192,7 @@
             // 
             // buttonEquals
             // 
-            buttonEquals.Location = new Point(234, 367);
+            buttonEquals.Location = new Point(176, 367);
             buttonEquals.Name = "buttonEquals";
             buttonEquals.Size = new Size(52, 45);
             buttonEquals.TabIndex = 14;
@@ -194,11 +200,72 @@
             buttonEquals.UseVisualStyleBackColor = true;
             buttonEquals.Click += buttonEquals_Click;
             // 
+            // buttonDIv
+            // 
+            buttonDIv.ForeColor = Color.Black;
+            buttonDIv.Location = new Point(234, 163);
+            buttonDIv.Name = "buttonDIv";
+            buttonDIv.Size = new Size(52, 45);
+            buttonDIv.TabIndex = 15;
+            buttonDIv.Text = "÷";
+            buttonDIv.UseVisualStyleBackColor = true;
+            buttonDIv.Click += buttonDIv_Click;
+            // 
+            // buttonDel
+            // 
+            buttonDel.ForeColor = Color.Black;
+            buttonDel.Location = new Point(118, 163);
+            buttonDel.Name = "buttonDel";
+            buttonDel.Size = new Size(52, 45);
+            buttonDel.TabIndex = 16;
+            buttonDel.Text = "DEL";
+            buttonDel.UseVisualStyleBackColor = true;
+            buttonDel.Click += buttonDel_Click;
+            // 
+            // buttonClear
+            // 
+            buttonClear.ForeColor = Color.Black;
+            buttonClear.Location = new Point(60, 163);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(52, 45);
+            buttonClear.TabIndex = 17;
+            buttonClear.Text = "C";
+            buttonClear.UseVisualStyleBackColor = true;
+            buttonClear.Click += buttonClear_Click;
+            // 
+            // buttonDot
+            // 
+            buttonDot.ForeColor = Color.Black;
+            buttonDot.Location = new Point(118, 367);
+            buttonDot.Name = "buttonDot";
+            buttonDot.RightToLeft = RightToLeft.No;
+            buttonDot.Size = new Size(52, 45);
+            buttonDot.TabIndex = 18;
+            buttonDot.Text = ".";
+            buttonDot.UseVisualStyleBackColor = true;
+            buttonDot.Click += buttonDot_Click;
+            // 
+            // buttonPower
+            // 
+            buttonPower.ForeColor = Color.Black;
+            buttonPower.Location = new Point(176, 163);
+            buttonPower.Name = "buttonPower";
+            buttonPower.Size = new Size(52, 45);
+            buttonPower.TabIndex = 19;
+            buttonPower.Text = "^";
+            buttonPower.UseVisualStyleBackColor = true;
+            buttonPower.Click += buttonPower_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(407, 486);
+            Controls.Add(buttonPower);
+            Controls.Add(buttonDot);
+            Controls.Add(buttonClear);
+            Controls.Add(buttonDel);
+            Controls.Add(buttonDIv);
             Controls.Add(buttonEquals);
             Controls.Add(buttonAdd);
             Controls.Add(buttonSub);
@@ -237,5 +304,10 @@
         private Button buttonSub;
         private Button buttonAdd;
         private Button buttonEquals;
+        private Button buttonDIv;
+        private Button buttonDel;
+        private Button buttonClear;
+        private Button buttonDot;
+        private Button buttonPower;
     }
 }
