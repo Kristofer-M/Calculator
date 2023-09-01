@@ -42,7 +42,7 @@ namespace Calculator
                     }
                 }
             }
-            catch (System.Data.SyntaxErrorException)
+            catch (Exception)
             {
                 output = "ERROR";
             }
@@ -87,9 +87,18 @@ namespace Calculator
         // DELETION
         private void buttonDel_Click(object sender, EventArgs e)
         {
-            expression = expression.Remove(expression.Length - 1);
-            input = input.Remove(input.Length - 1);
-            tbInput.Text = input;
+            if (string.IsNullOrEmpty(expression))
+            {
+                expression = "";
+                input = "";
+                tbInput.Text = "";
+            }
+            else
+            {
+                expression = expression.Remove(expression.Length - 1);
+                input = input.Remove(input.Length - 1);
+                tbInput.Text = input;
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
