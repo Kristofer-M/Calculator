@@ -7,15 +7,17 @@ namespace Calculator
     {
         public String input;
         public String expression;
-        public Dictionary<String, String> operators = new Dictionary<string, string>();
+        public Dictionary<String, String> operators = new Dictionary<string, string>()
+        {
+            {"×", "*" },
+            {"÷", "/" },
+            {"√(", "sqrt(" },
+            {"%", "/100" }
+        };
         public String memory = null;
         public Calculator()
         {
             InitializeComponent();
-            operators.Add("×", "*");
-            operators.Add("÷", "/");
-            operators.Add("√(", "sqrt(");
-            operators.Add("%", "/100");
         }
 
         // MATH EVALUATION
