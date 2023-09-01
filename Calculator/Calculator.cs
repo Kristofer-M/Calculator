@@ -20,6 +20,29 @@ namespace Calculator
             InitializeComponent();
         }
 
+        // This function changes the size of the font based on how much text is in the tbInput box
+        private void tbInput_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            int maxLength = 26;
+            int minFontSize = 12;
+            int maxFontSize = 35;
+
+            float fontSize = maxFontSize - (textBox.Text.Length * (maxFontSize - minFontSize) / maxLength);
+
+            if (fontSize < minFontSize)
+            {
+                fontSize = minFontSize;
+            }
+            else if (fontSize > maxFontSize)
+            {
+                fontSize = maxFontSize;
+            }
+
+            textBox.Font = new Font(textBox.Font.FontFamily, fontSize);
+        }
+
         // MATH EVALUATION
         private void buttonEquals_Click(object sender, EventArgs e)
         {
@@ -27,7 +50,6 @@ namespace Calculator
 
             try
             {
-                //double result = Convert.ToDouble(new DataTable().Compute(expression, null));
                 if (!string.IsNullOrEmpty(expression))
                 {
                     var mathExpression = new Expression(expression);
@@ -122,6 +144,8 @@ namespace Calculator
             memoryOperation("-");
         }
 
+        // This function adds or subtracts, depending on the op parameter, and it saves to memory
+        // depending if the memory is empty.
         private void memoryOperation(string op)
         {
             if (!int.TryParse(expression, out _))
@@ -153,6 +177,12 @@ namespace Calculator
         }
 
         // PERCENT
+        /* This function evaluates everything before the %, up until an "(" if there is one
+           and takes N% from that result and evaluates the result
+           Example: 10 * 5 + 50% = 50 + 50% = 50 + 50% of 50 = 50 + 25 = 75
+           10 * 5 gets evaluated to 50, then the algorhithm takes 50% off 50, which is 25
+           and then adds it to the original 50.
+        */
         private void buttonPercent_Click(object sender, EventArgs e)
         {
             int start = expression.LastIndexOf("(");
@@ -171,7 +201,6 @@ namespace Calculator
             }
             else
             {
-                //end--;
                 updateInput("%");
                 var subExpression = new Expression(expression.Substring(start, end - start));
                 string subResult = subExpression.Eval().ToString();
@@ -279,26 +308,5 @@ namespace Calculator
             updateInput("√(");
         }
 
-        private void tbInput_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-
-            int maxLength = 26;
-            int minFontSize = 12;
-            int maxFontSize = 36;
-
-            float fontSize = maxFontSize - (textBox.Text.Length * (maxFontSize - minFontSize) / maxLength);
-
-            if (fontSize < minFontSize)
-            {
-                fontSize = minFontSize;
-            }
-            else if (fontSize > maxFontSize)
-            {
-                fontSize = maxFontSize;
-            }
-
-            textBox.Font = new Font(textBox.Font.FontFamily, fontSize);
-        }
     }
 }
