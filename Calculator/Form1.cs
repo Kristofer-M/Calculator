@@ -174,7 +174,8 @@ namespace Calculator
                 var subExpression = new Expression(expression.Substring(start, end - start));
                 string subResult = subExpression.Eval().ToString();
                 expression = expression.Replace(expression.Substring(start, end - start), subResult);
-                expression += "*" + subResult;
+                expression += "*" + subResult + ")";
+                expression = expression.Insert(end+1, "(");
             }
         }
 
