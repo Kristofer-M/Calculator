@@ -21,21 +21,24 @@ namespace Calculator
         // MATH EVALUATION
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            string output = "NONE";
+            string output = "";
 
             try
             {
                 //double result = Convert.ToDouble(new DataTable().Compute(expression, null));
-                var mathExpression = new Expression(expression);
-                double number;
-                output = mathExpression.Eval().ToString();
-           
-                if (double.TryParse(output, out number))
+                if (!string.IsNullOrEmpty(expression))
                 {
-                    if(number % 1 == 0)
+                    var mathExpression = new Expression(expression);
+                    double number;
+                    output = mathExpression.Eval().ToString();
+
+                    if (double.TryParse(output, out number))
                     {
-                        int wholeNumber = (int)number;
-                        output = wholeNumber.ToString();
+                        if (number % 1 == 0)
+                        {
+                            int wholeNumber = (int)number;
+                            output = wholeNumber.ToString();
+                        }
                     }
                 }
             }
@@ -259,8 +262,8 @@ namespace Calculator
         {
             TextBox textBox = (TextBox)sender;
 
-            int maxLength = 28;
-            int minFontSize = 8;
+            int maxLength = 26;
+            int minFontSize = 12;
             int maxFontSize = 36;
 
             float fontSize = maxFontSize - (textBox.Text.Length * (maxFontSize - minFontSize) / maxLength);
