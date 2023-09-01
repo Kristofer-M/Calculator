@@ -55,6 +55,8 @@
             buttonMemoryMinus = new Button();
             buttonMemoryClear = new Button();
             buttonPercent = new Button();
+            lbMemory = new Label();
+            tbMemory = new TextBox();
             SuspendLayout();
             // 
             // number7
@@ -338,11 +340,32 @@
             buttonPercent.UseVisualStyleBackColor = true;
             buttonPercent.Click += buttonPercent_Click;
             // 
+            // lbMemory
+            // 
+            lbMemory.AutoSize = true;
+            lbMemory.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbMemory.Location = new Point(114, 401);
+            lbMemory.Name = "lbMemory";
+            lbMemory.Size = new Size(76, 21);
+            lbMemory.TabIndex = 27;
+            lbMemory.Text = "Memory: ";
+            // 
+            // tbMemory
+            // 
+            tbMemory.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tbMemory.Location = new Point(196, 398);
+            tbMemory.Name = "tbMemory";
+            tbMemory.ReadOnly = true;
+            tbMemory.Size = new Size(127, 29);
+            tbMemory.TabIndex = 28;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(358, 442);
+            Controls.Add(tbMemory);
+            Controls.Add(lbMemory);
             Controls.Add(buttonPercent);
             Controls.Add(buttonMemoryClear);
             Controls.Add(buttonMemoryMinus);
@@ -405,5 +428,7 @@
         private Button buttonMemoryMinus;
         private Button buttonMemoryClear;
         private Button buttonPercent;
+        private Label lbMemory;
+        private TextBox tbMemory;
     }
 }

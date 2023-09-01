@@ -27,7 +27,17 @@ namespace Calculator
             {
                 //double result = Convert.ToDouble(new DataTable().Compute(expression, null));
                 var mathExpression = new Expression(expression);
+                double number;
                 output = mathExpression.Eval().ToString();
+           
+                if (double.TryParse(output, out number))
+                {
+                    if(number % 1 == 0)
+                    {
+                        int wholeNumber = (int)number;
+                        output = wholeNumber.ToString();
+                    }
+                }
             }
             catch (System.Data.SyntaxErrorException)
             {
@@ -111,6 +121,7 @@ namespace Calculator
                 if (string.IsNullOrEmpty(memory))
                 {
                     memory = expression;
+                    tbMemory.Text = memory;
                 }
                 else
                 {
@@ -124,6 +135,7 @@ namespace Calculator
         private void buttonMemoryClear_Click(object sender, EventArgs e)
         {
             memory = null;
+            tbMemory.Text = null;   
         }
 
         // PERCENT
@@ -131,6 +143,7 @@ namespace Calculator
         {
             int start = expression.LastIndexOf("(");
             if (start == -1) { start = 0; }
+            else { start++; }
             int end = expression.Length - 1;
             while (int.TryParse(expression[end].ToString(), out _))
             {
@@ -246,9 +259,9 @@ namespace Calculator
         {
             TextBox textBox = (TextBox)sender;
 
-            int maxLength = 28; 
-            int minFontSize = 8; 
-            int maxFontSize = 36; 
+            int maxLength = 28;
+            int minFontSize = 8;
+            int maxFontSize = 36;
 
             float fontSize = maxFontSize - (textBox.Text.Length * (maxFontSize - minFontSize) / maxLength);
 
