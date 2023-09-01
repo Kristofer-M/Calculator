@@ -157,16 +157,25 @@ namespace Calculator
             if (start == -1) { start = 0; }
             else { start++; }
             int end = expression.Length - 1;
-            while (int.TryParse(expression[end].ToString(), out _))
+            while (int.TryParse(expression[end].ToString(), out _) && end != 0)
             {
                 end--;
             }
-            //end--;
-            updateInput("%");
-            var subExpression = new Expression(expression.Substring(start, end - start));
-            string subResult = subExpression.Eval().ToString();
-            expression = expression.Replace(expression.Substring(start, end - start), subResult);
-            expression += "*" + subResult;
+            if (end == start)
+            {
+                tbInput.Text = "ERROR";
+                input = "";
+                expression = "";
+            }
+            else
+            {
+                //end--;
+                updateInput("%");
+                var subExpression = new Expression(expression.Substring(start, end - start));
+                string subResult = subExpression.Eval().ToString();
+                expression = expression.Replace(expression.Substring(start, end - start), subResult);
+                expression += "*" + subResult;
+            }
         }
 
 
