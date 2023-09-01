@@ -94,3 +94,4 @@ private void buttonEquals_Click(object sender, EventArgs e)
 Ако екпресијата не е точно поставена, ако има незатворена заграда, или ако има оператор без број итн. се фаќа тој error и се прикажува ERROR на `tbInput` display-от.
 
 # Изглед на апликацијата
+![Screenshot од апликацијата](https://github.com/Kristofer-M/Calculator/blob/master/Calculator.png)
