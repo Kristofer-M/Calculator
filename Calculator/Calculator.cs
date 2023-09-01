@@ -173,7 +173,7 @@ namespace Calculator
         private void buttonMemoryClear_Click(object sender, EventArgs e)
         {
             memory = null;
-            tbMemory.Text = null;   
+            tbMemory.Text = null;
         }
 
         // PERCENT
@@ -206,7 +206,7 @@ namespace Calculator
                 string subResult = subExpression.Eval().ToString();
                 expression = expression.Replace(expression.Substring(start, end - start), subResult);
                 expression += "*" + subResult + ")";
-                expression = expression.Insert(end+1, "(");
+                expression = expression.Insert(end + 1, "(");
             }
         }
 

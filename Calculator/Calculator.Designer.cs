@@ -165,6 +165,7 @@
             tbInput.Location = new Point(40, 44);
             tbInput.Multiline = true;
             tbInput.Name = "tbInput";
+            tbInput.ReadOnly = true;
             tbInput.Size = new Size(283, 66);
             tbInput.TabIndex = 10;
             tbInput.TextChanged += tbInput_TextChanged;
@@ -359,7 +360,7 @@
             tbMemory.Size = new Size(127, 29);
             tbMemory.TabIndex = 28;
             // 
-            // Form1
+            // Calculator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -393,7 +394,7 @@
             Controls.Add(number9);
             Controls.Add(number8);
             Controls.Add(number7);
-            Name = "Form1";
+            Name = "Calculator";
             Text = "Calculator";
             ResumeLayout(false);
             PerformLayout();
