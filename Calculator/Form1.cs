@@ -242,6 +242,26 @@ namespace Calculator
             updateInput("√(");
         }
 
-       
+        private void tbInput_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            int maxLength = 28; 
+            int minFontSize = 8; 
+            int maxFontSize = 36; 
+
+            float fontSize = maxFontSize - (textBox.Text.Length * (maxFontSize - minFontSize) / maxLength);
+
+            if (fontSize < minFontSize)
+            {
+                fontSize = minFontSize;
+            }
+            else if (fontSize > maxFontSize)
+            {
+                fontSize = maxFontSize;
+            }
+
+            textBox.Font = new Font(textBox.Font.FontFamily, fontSize);
+        }
     }
 }

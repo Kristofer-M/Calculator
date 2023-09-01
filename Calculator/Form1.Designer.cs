@@ -165,6 +165,7 @@
             tbInput.Name = "tbInput";
             tbInput.Size = new Size(283, 66);
             tbInput.TabIndex = 10;
+            tbInput.TextChanged += tbInput_TextChanged;
             // 
             // buttonMult
             // 
