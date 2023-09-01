@@ -15,6 +15,7 @@ namespace Calculator
             operators.Add("×", "*");
             operators.Add("÷", "/");
             operators.Add("√(", "sqrt(");
+            operators.Add("%", "/100");
         }
 
         // MATH EVALUATION
@@ -125,6 +126,25 @@ namespace Calculator
             memory = null;
         }
 
+        // PERCENT
+        private void buttonPercent_Click(object sender, EventArgs e)
+        {
+            int start = expression.LastIndexOf("(");
+            if (start == -1) { start = 0; }
+            int end = expression.Length - 1;
+            while (int.TryParse(expression[end].ToString(), out _))
+            {
+                end--;
+            }
+            //end--;
+            updateInput("%");
+            var subExpression = new Expression(expression.Substring(start, end - start));
+            string subResult = subExpression.Eval().ToString();
+            expression = expression.Replace(expression.Substring(start, end - start), subResult);
+            expression += "*" + subResult;
+        }
+
+
         // NUMBERS AND OPERATIONS
         private void number1_Click(object sender, EventArgs e)
         {
@@ -222,6 +242,6 @@ namespace Calculator
             updateInput("√(");
         }
 
-        
+       
     }
 }

@@ -54,6 +54,7 @@
             buttonMemoryPlus = new Button();
             buttonMemoryMinus = new Button();
             buttonMemoryClear = new Button();
+            buttonPercent = new Button();
             SuspendLayout();
             // 
             // number7
@@ -326,11 +327,22 @@
             buttonMemoryClear.UseVisualStyleBackColor = true;
             buttonMemoryClear.Click += buttonMemoryClear_Click;
             // 
+            // buttonPercent
+            // 
+            buttonPercent.Location = new Point(39, 391);
+            buttonPercent.Name = "buttonPercent";
+            buttonPercent.Size = new Size(52, 45);
+            buttonPercent.TabIndex = 26;
+            buttonPercent.Text = "%";
+            buttonPercent.UseVisualStyleBackColor = true;
+            buttonPercent.Click += buttonPercent_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(358, 410);
+            ClientSize = new Size(358, 442);
+            Controls.Add(buttonPercent);
             Controls.Add(buttonMemoryClear);
             Controls.Add(buttonMemoryMinus);
             Controls.Add(buttonMemoryPlus);
@@ -391,5 +403,6 @@
         private Button buttonMemoryPlus;
         private Button buttonMemoryMinus;
         private Button buttonMemoryClear;
+        private Button buttonPercent;
     }
 }
