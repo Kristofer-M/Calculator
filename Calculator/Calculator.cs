@@ -3,13 +3,13 @@ using org.matheval;
 
 namespace Calculator
 {
-    public partial class Form1 : Form
+    public partial class Calculator : Form
     {
         public String input;
         public String expression;
         public Dictionary<String, String> operators = new Dictionary<string, string>();
         public String memory = null;
-        public Form1()
+        public Calculator()
         {
             InitializeComponent();
             operators.Add("×", "*");
